@@ -1,6 +1,8 @@
 let PlayerO =true;
 let boxes=document.querySelectorAll(".box");
 let message=document.querySelector(".winnerMessage");
+let restartbtn=document.querySelector(".restartbtn");
+
 const winningpattern=[
   [0, 1, 2],
   [0, 3, 6],
@@ -18,7 +20,7 @@ box.disabled=true;
 }};
 
 const winner =(winner)=>{
-    message.innerText= `Winner is ${winner}`
+    message.innerText= `Winner is Player ${winner}`;
     message.classList.remove("hide");
     disableBoxes();
 };
@@ -40,12 +42,18 @@ box.addEventListener("click", ()=>{
   if(PlayerO){
  box.innerText="O"
  PlayerO=false;
+ box.classList.add("colorO");
   }
   else {
     box.innerText="X"
     PlayerO =true;
+    box.classList.add("colorX");
   }
   box.disabled = true;
   checkWinner();
 });
+});
+
+restartbtn.addEventListener("click", ()=>{
+location.reload();
 });

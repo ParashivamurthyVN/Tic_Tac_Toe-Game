@@ -4,10 +4,9 @@
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     gap:7px;
-    background-color: black;
-    
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,149,218,0.85) 9.9%, rgba(56,80,114,1) 100.3% );
   }
-  
+
   body {
     display: flex;
     justify-content: center;
@@ -15,6 +14,7 @@
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
   }
   
   .box{
@@ -22,8 +22,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
     font-size: 50px;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px,
+    #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -3.2px -3.2px 8px 0px inset;
+  cursor: pointer;
+  font-family: Montserrat;
+  transition: 0.1s ease-in-out;
+    /* transition: transform 0.4s ease;
+    position: relative; */
+  }
+
+  .title {
+    margin-left: 80px;
+    color:#294d61;
+  }
+
+  /* .box:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+  } */
+
+  .box:active {
+    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+    #c7c3c0 -3.2px -3.2px 8px 0px inset;
+  }
+
+  .winnerMessage{
+    margin-left: 22px;
+    margin-bottom: 35px;
+    color:#294d61;
+    
   }
 
   .hide {
@@ -34,6 +63,19 @@
     border: none;
     outline: none;
     background-color: azure;
+  }
+
+  .colorX{
+    color:rgba(242,121,1,0.84)
+  }
+
+  .colorO{
+    color:rgba(0,149,218,0.85);
+  }
+
+  .restartbtn{
+    margin:40px 130px;
+
   }
   
   
