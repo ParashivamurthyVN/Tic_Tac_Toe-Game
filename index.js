@@ -2,6 +2,7 @@ let PlayerO =true;
 let boxes=document.querySelectorAll(".box");
 let message=document.querySelector(".winnerMessage");
 let restartbtn=document.querySelector(".restartbtn");
+let title=document.querySelector(".title");
 
 const winningpattern=[
   [0, 1, 2],
@@ -21,8 +22,26 @@ box.disabled=true;
 
 const winner =(winner)=>{
     message.innerText= `Winner is Player ${winner}`;
+    title.classList.add("hide")
     message.classList.remove("hide");
+
     disableBoxes();
+};
+
+
+const checkdraw=()=>{
+  let Ecount = 0;
+for (let box of boxes){
+let text =box.innerText
+if(text==""){
+  Ecount++;
+}}
+console.log(Ecount);
+if(Ecount==0){
+  message.innerText= `It's A Draw!`;
+  title.classList.add("hide")
+  message.classList.remove("hide");
+}
 };
 
 const checkWinner=()=>{
@@ -51,6 +70,7 @@ box.addEventListener("click", ()=>{
   }
   box.disabled = true;
   checkWinner();
+  checkdraw();
 });
 });
 
